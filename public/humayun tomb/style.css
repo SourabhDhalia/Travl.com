@@ -2454,7 +2454,7 @@ box-shadow: 0 30px 40px rgba(19, 146, 219, 0.479), 0 30px 20px rgba(149, 47, 231
                         }
 }
 
-@media (max-width:375px)
+@media (max-width:500px)
 {
 
 #map{
