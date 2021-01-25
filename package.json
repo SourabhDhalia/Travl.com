@@ -5,14 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "dev": "nodemon src/app.js -e js,hbs",
     "start": "nodemon src/app.js -e js,hbs"
 
-=======
-    "start": "nodemon src/app.js -e js,hbs",
-    "dev": "nodemon src/app.js -e js,hbs"
->>>>>>> 44b13d53be9cda68411fa825584e216b591c5b27
   },
   "keywords": [],
   "author": "",
