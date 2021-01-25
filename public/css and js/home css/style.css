@@ -1203,48 +1203,6 @@ transition: .3s ease-in-out;}
 
 
 
-/*
-
-#feedback{
-   padding-top: 20px;
-}
-#feedback::before{
-    content:"";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.7;
-    background: url(/image/bgg2.jpg);
-}
-#feedback-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 34px;
-
-
-}
-#feedback-box form{
-    width: 40%;
-
-}
-#feedback-box label{
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    
-}
-
-#feedback-box input,
-#feedback-box textarea{
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 9px;
-    font-size: 1.1rem;
-
-} */
-
-/* more taj bottun */
 
 
 .bt2{
