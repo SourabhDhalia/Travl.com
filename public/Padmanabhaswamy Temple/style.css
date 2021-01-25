@@ -1591,7 +1591,7 @@ p0p up test x------>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<------------x
 }
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
   
     .contact .box {
         position: relative;
@@ -1730,7 +1730,7 @@ margin-top:5px;
    
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
   
     .contact .box {
         position: relative;
@@ -1988,7 +1988,7 @@ margin-top:5px;
 
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
     .services-container{
         width: 100%;
    
@@ -2327,7 +2327,7 @@ transition: .4s ease-in-out;
 
 
 }
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
     .abcdefg{
         widows: 100%;
     }
@@ -2417,7 +2417,7 @@ transition: .4s ease-in-out;
         }
          }
         
-@media (max-width:1025px)
+@media (max-width:1080px)
 {
     #map{
         display:block;

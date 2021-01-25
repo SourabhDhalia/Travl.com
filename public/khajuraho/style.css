@@ -1246,43 +1246,43 @@ ul.hhh {
     font-size: 1.1rem;
     margin-top: 20px;
     margin-bottom: 20px;
-}
-#map{
-display:inline-flex;
-    margin-left: 100px;
-
-}
-#map .y{
-margin-left: 120px;
-/* box-shadow: 0 25px 34px rgba(46, 93, 121, 0.479), 0 25px 15px rgba(113, 67, 151, 0.459); */
-
-transition: .4s;
-
-}
-#map .y:hover{
-
-
-    margin-top: 70px;
-box-shadow: 0 30px 40px rgba(19, 146, 219, 0.479), 0 30px 20px rgba(149, 47, 231, 0.459);
-
-transition: .4s;
-    }
-    #map  .m{
-
-     transition: .4s;
- 
+}@media screen and (max-width:2246px){
+    #map{
+        display:inline-flex;
+            margin-left: 100px;
+        
         }
-        #map  .m:hover{
-margin-top: 70px;
-        margin-left: 300px;
-box-shadow: 0 25px 34px rgba(46, 93, 121, 0.479), 0 25px 15px rgba(113, 67, 151, 0.459);
-       
+        #map .y{
+                    
+        margin-left: 120px;
+        /* box-shadow: 0 25px 34px rgba(46, 93, 121, 0.479), 0 25px 15px rgba(113, 67, 151, 0.459); */
+        
         transition: .4s;
-
-            }
-
-
+        
+        }
+        #map .y:hover{
+        
+        
+            margin-top: 70px;
             
+        box-shadow: 0 30px 40px rgba(19, 146, 219, 0.479), 0 30px 20px rgba(149, 47, 231, 0.459);
+        
+        transition: .4s;
+            }
+            #map  .m{
+             transition: .4s;
+         
+                }
+                #map  .m:hover{
+        margin-top: 70px;
+                margin-left: 300px;
+        box-shadow: 0 25px 34px rgba(46, 93, 121, 0.479), 0 25px 15px rgba(113, 67, 151, 0.459);
+               
+                transition: .4s;
+        
+                    }
+        
+        }  
             
 /* 
 
@@ -1591,7 +1591,7 @@ p0p up test x------>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<------------x
 }
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
   
     .contact .box {
         position: relative;
@@ -1730,7 +1730,7 @@ margin-top:5px;
    
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
   
     .contact .box {
         position: relative;
@@ -1988,7 +1988,7 @@ margin-top:5px;
 
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
     .services-container{
         width: 100%;
    
@@ -2327,7 +2327,7 @@ transition: .4s ease-in-out;
 
 
 }
-@media screen and (max-width:1024px){
+@media screen and (max-width:1080px){
     .abcdefg{
         widows: 100%;
     }
@@ -2417,7 +2417,7 @@ transition: .4s ease-in-out;
         }
          }
         
-@media (max-width:1025px)
+@media (max-width:1080px)
 {
     #map{
         display:block;
