@@ -29,13 +29,40 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   
   <style>
-          .modal{
+                .modal{
               max-width: 969px;
           box-sizing: border-box;
           width: 100%;
           transition: all .4s ease-in-out;
           };
 
+@media (max-width:1025px)
+{
+          .modal{
+          
+          width: 100%;
+          };
+}
+@media (max-width:375px)
+{        .modal{
+            width: 100%;
+    background: none;
+    height: fit-content;
+    color: whitesmoke;
+          };
+          .modal .mb-40 iframe{
+          
+      
+                       position: relative;
+                width: 50%;
+                height: 50%;
+               
+    background: none;
+    height: fit-content;
+    color: whitesmoke;
+          };
+          
+}
 
       </style>
 
@@ -200,10 +227,10 @@
 </section>
 {{!-- <aside>  <a href="/morenext1" class="bt2">Next</a></aside> --}}
       <aside><a href="/morenext1" style="color:gold; border:0px;" class="bt2">Next</a></aside>
-      <aside><a href="/more" style="color:gold; border:0px;" class="bt2">Back</a></aside>
+      <aside><a href="/" style="color:gold; border:0px;" class="bt2">Back</a></aside>
 
       <footer>
-        <span>Created By <a href="#home">Sourabh Dhalia && ShivKrishn</a> | <span class="far fa-copyright"> |
+        <span>Created By <a href="#home">Sourabh Dhalia</a> | <span class="far fa-copyright"> |
                 www.trevl.com |</span> 2020 All rights reserved.</span>
     </footer>
     <script src="css and js/home js/script.js"></script>

@@ -121,7 +121,7 @@ inputBox.onkeyup = (e)=>{
     let emptyArray = [];
     if(userData){
         icon.onclick = ()=>{
-            webLink = "http://localhost:3000/" + userData;
+            webLink = "https://travlin.herokuapp.com/" + userData;
             linkTag.setAttribute("href", webLink);
             console.log(webLink);
             linkTag.click();
@@ -150,7 +150,7 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        webLink = "http://localhost:3000/" + selectData;
+        webLink = "https://travlin.herokuapp.com/" + selectData;
         linkTag.setAttribute("href", webLink);
         linkTag.click();
     }

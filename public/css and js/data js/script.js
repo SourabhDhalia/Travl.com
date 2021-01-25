@@ -6,7 +6,7 @@ $(document).ready(function(){
         }else{
             $('.navbar').removeClass("sticky");
         } 
-         
+        
         // scroll-up button show/hide script
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");
@@ -39,8 +39,8 @@ $(document).ready(function(){
     backSpeed: 60,
     loop: true
 });
-
 document.getElementById("typ").style.color = "gold";
+
 
 
     // owl carousel script
@@ -77,51 +77,8 @@ $(window).scroll(function () {
     }else{
         $('.navbar').removeClass('fixed');
     }
-
-
 });
-// const openModalButtons = document.querySelectorAll('[data-modal-target]')
-// const closeModalButtons = document.querySelectorAll('[data-close-button]')
-// const overlay = document.getElementById('overlay')
 
-// openModalButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const modal = document.querySelector(button.dataset.modalTarget)
-//     openModal(modal)
-//   })
-// })
-
-// overlay.addEventListener('click', () => {
-//   const modals = document.querySelectorAll('.modal.active')
-//   modals.forEach(modal => {
-//     closeModal(modal)
-//   })
-// })
-
-// closeModalButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const modal = button.closest('.modal')
-//     closeModal(modal)
-//   })
-// })
-
-// function openModal(modal) {
-//   if (modal == null) return
-//   modal.classList.add('active')
-//   overlay.classList.add('active')
-// }
-
-// function closeModal(modal) {
-//   if (modal == null) return
-//   modal.classList.remove('active')
-//   overlay.classList.remove('active')
-// }
-
-//   // When the user clicks on div, open the popup
-//   function myFunction() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }
 
 
 let suggestions = [
