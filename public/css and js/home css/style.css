@@ -213,8 +213,10 @@ transition: .25s ease;
     opacity: 1;
     pointer-events: auto;
 }
-.scroll-up-btn:hover{height: 51px;
-    width: 48px;text-align: center;
+.scroll-up-btn:hover{
+    height: 51px;
+    width: 48px;
+    text-align: center;
     color: #ff0;
     transition: .3s;
 }
@@ -1062,7 +1064,7 @@ transition: .3s ease-in-out;}
 }
 .hs{
     float: center;
-    padding: 10% 20%;
+    padding: 0% 20%;
  text-align: center;
  padding-bottom: 10px;
  font-size: 30px;
