@@ -1,7 +1,7 @@
-Usage
+# Usage
 $ npm install
 $ npm start
-# Or
+ Or
 $ npm run dev
 
-# Visit http://localhost:5000
+# Visit http://localhost:3000
