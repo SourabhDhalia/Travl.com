@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>SignIn on TRAVL.com</title>
+
+	<link rel="shortcut icon" href="css and js/login img/13.png" type="image/x-icon">
+	<link rel="stylesheet" href="css and js/login css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="app.js"></script>
+</head>
+<body>
+    <h2>LOGIN</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		{{!-- <form action="/register" method="POST"> --}}
+		<form action="/login" method="POST">
+			
+			<h1>Sign in</h1>
+			<div class="social-container">
+					<div class="flip-card">
+					<div class="flip-card-inner">
+						<div class="flip-card-front">
+							{{!-- <a href="#"  class="fa fa-facebook"></a>
+							<a href="#" class="fa fa-twitter"></a>
+							<a href="#" class="fa fa-google"></a> --}}
+							<div class="flip-card-back">
+								{{!-- <a href="#" class="fa fa-facebook"></a>
+								<a href="#" class="fa fa-twitter"></a>
+								<a href="#" class="fa fa-google"></a> --}}
+							</div> 
+						</div>
+					</div>
+				</div></div>
+				<span>or use your account</span>
+				
+				<input type="email" name="email" placeholder="email" required/>
+				<input type="password" name="password" placeholder="password" required/>
+				
+				<input type="submit" name="SignIn" class="btnsd" value="Sign In">
+				
+				<a class="abtn" href="/register">Sign Up</a>
+				{{!-- <a href="#" class="fra" >Forgot your password?</a> --}}
+			</form>
+			
+		</div>
+
+	<div class="overlay-container">
+		<div class="overlay">
+			
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signUp">Sign In</button>
+			
+
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+
+<!-- 
+      <footer>
+
+        <div class="center">
+
+        copyright &copy; www.trevl.com. ALL RIGHTS RESERVED
+
+        </div>
+      </footer> -->   <footer>
+            <span>Created By <a href="/">Sourabh Dhalia && ShivKrishn</a> |  <span >copyright &copy | www.trevl.com |</span> 2020 All rights reserved.</span>
+        </footer>
+<script src="css and js/login js/effect.js">
+	
+</script>
+
+        
+
+</body>
+</html>
