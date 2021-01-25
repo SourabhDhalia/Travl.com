@@ -195,7 +195,7 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        webLink = "http://localhost:3000/" + selectData;
+        webLink = "https://travlin.herokuapp.com/" + selectData;
         linkTag.setAttribute("href", webLink);
         linkTag.click();
     }
