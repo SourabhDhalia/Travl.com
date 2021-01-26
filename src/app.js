@@ -156,13 +156,13 @@ app.listen(port, ()=>{
 
 
 
-// //extra
-// const port = process.env.MONGO_URL || "mongodb://localhost/kitten_db";
-// Mongoose.connect(url,{useNewUrlParser:true, useUnifiedTopology: true})
-// .then(async()=>{
-//     await kittenDB.bootstrap();
-//     await app.listen(port);
-//     console.log(`Kitten API running on port${port}!`);
+//extra
+const port = process.env.MONGO_URL || "mongodb://localhost/db/conn.js";
+Mongoose.connect(url,{useNewUrlParser:true, useUnifiedTopology: true})
+.then(async()=>{
+    await kittenDB.bootstrap();
+    await app.listen(port);
+    console.log(`Kitten API running on port${port}!`);
 
-// })
-// .catch(error => console.error(error));
+})
+.catch(error => console.error(error));
