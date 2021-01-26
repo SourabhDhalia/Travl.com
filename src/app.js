@@ -17,6 +17,7 @@ const Register = require("./models/registers");
 
 // const Contactu = require("./models/contactus");
 const {json} =require("express");
+const { Mongoose } = require("mongoose");
 
 
 const port = process.env.PORT || 3000;
@@ -145,8 +146,6 @@ app.post("/login", async (req, res) => {
 });
 
 
-
-
 // const employeeController = require('./controllers/employeeController');
 
 // app.use('/employee',employeeController);
@@ -154,3 +153,16 @@ app.post("/login", async (req, res) => {
 app.listen(port, ()=>{
     console.log(`server is running at port no ${port}`);
 })
+
+
+
+// //extra
+// const port = process.env.MONGO_URL || "mongodb://localhost/kitten_db";
+// Mongoose.connect(url,{useNewUrlParser:true, useUnifiedTopology: true})
+// .then(async()=>{
+//     await kittenDB.bootstrap();
+//     await app.listen(port);
+//     console.log(`Kitten API running on port${port}!`);
+
+// })
+// .catch(error => console.error(error));
