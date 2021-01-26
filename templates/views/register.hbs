@@ -48,10 +48,14 @@
 				<input type="password" name="Password" placeholder="Password" required/>
 				<input type="password" placeholder="Confirm Password" name="ConfirmPassword" required/>
 				
-				<input type="submit" name="Sign Up" class="btnsd" value="Sign Up">
+				<input type="submit" onclick="popup()" name="Sign Up" class="btnsd" value="Sign Up">
 				
-				<a class="abtn" href="/login">Sign In</a>
-				
+				<a class="abtn"  href="/login">Sign In</a>
+					<script>
+    function popup(){
+      swal("Good", "You data is secure with ous", "success")
+    }
+</script>
 			</form>
 			
 		</div>
@@ -63,7 +67,7 @@
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
 				<button class="ghost" id="signUp">Sign Up</button>
-			<a href="/login">	<button class="ghost" id="signIn">Sign In</button></a>
+			<a href="/login">	<button  class="ghost" id="signIn">Sign In</button></a>
 
 			</div>
 		</div>

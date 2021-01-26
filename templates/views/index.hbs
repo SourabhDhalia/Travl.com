@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-   
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 
     <!-- <script>alert(" !!!!!!!!!!!!!!!!! tab on login!!!!!!!!!!!!!!!!!!!!! ");</script> -->
@@ -220,7 +220,12 @@
         </div>
     </div>
     
-    <button class="bt2" style="border: 0px;"> <a href="/more" class="bt2" style="text-align: center;">READ MORE</a>  </button>
+    <button class="bt2" onclick="popup()" style="border: 0px;"> <a href="#" class="bt2" style="text-align: center;">READ MORE</a>  </button>
+<script>
+    function popup(){
+      swal("Please !!!", "Login for more awesome place", "warning")
+    }
+</script>
 </section>
 <!-- 
     <section class="feedback" id="feedback">

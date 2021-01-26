@@ -8,6 +8,8 @@
 
 	<link rel="shortcut icon" href="css and js/login img/13.png" type="image/x-icon">
 	<link rel="stylesheet" href="css and js/login css/style.css">
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="app.js"></script>
 </head>
@@ -39,9 +41,14 @@
 				<input type="email" name="email" placeholder="email" required/>
 				<input type="password" name="password" placeholder="password" required/>
 				
-				<input type="submit" name="SignIn" class="btnsd" value="Sign In">
+				<input type="submit" onclick="popup()" name="SignIn" class="btnsd" value="Sign In">
 				
-				<a class="abtn" href="/register">Sign Up</a>
+				<a class="abtn"  href="/register">Sign Up</a>
+			<script>
+    function popup(){
+      swal("Good", "Login In", "success")
+    }
+</script>
 				{{!-- <a href="#" class="fra" >Forgot your password?</a> --}}
 			</form>
 			
