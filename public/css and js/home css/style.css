@@ -939,7 +939,7 @@ font-size: 20px;
     }
   
     [type="checkbox"]:checked + .feedback-label {
-      transform: rotate(-90deg) translate(50%, calc((var(--form-mob-width) + 100%) * -1));
+      transform: rotate(-90deg) translate(50%, calc((var(--form-mob-width) + 650%) * -1));
       /*uncomment this if you want to reverse the order of the characters*/
       /*transform: rotate(90deg) translate(50%, var(--form-mob-width));*/
     }
