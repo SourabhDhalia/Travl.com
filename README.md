@@ -1,7 +1,7 @@
 # Usage
 $ npm install
 =====================
-# In new terminal -->$
+# In new terminal -->
 
 $ npm start
  Or
