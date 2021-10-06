@@ -1,7 +1,9 @@
 # Usage
-npm install
+install nodejs
+and after this watch 
+https://youtu.be/UfeqbB3SLfI 
 =====================
-# In new terminal -->
+# In new terminal --> 
 
  npm start
  Or
