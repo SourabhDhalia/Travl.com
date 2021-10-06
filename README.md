@@ -1,9 +1,9 @@
 # Usage
-$ npm install
+npm install
 =====================
 # In new terminal -->
 
-$ npm start
+ npm start
  Or
-$ npm run dev 
+ npm run dev 
 # Visit http://localhost:3000
