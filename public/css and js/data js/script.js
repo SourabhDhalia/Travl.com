@@ -124,8 +124,8 @@ inputBox.onkeyup = (e)=>{
     if(userData){
         icon.onclick = ()=>{
 //             webLink = "https://travlin.herokuapp.com/" + userData; 
-// webLink = document.location.origin+"/" + userData;
-webLink = "http://localhost:3000/" + userData;
+webLink = document.location.origin+"/" + userData;
+// webLink = "http://localhost:3000/" + userData;
 
             linkTag.setAttribute("href", webLink);
             console.log(webLink);
@@ -156,8 +156,8 @@ function select(element){
     inputBox.value = selectData;
     icon.onclick = ()=>{
 //         webLink = "https://travlin.herokuapp.com/" + selectData;
-// webLink =document.location.origin+"/" + selectData;
-webLink ="http://localhost:3000/" + selectData;
+webLink =document.location.origin+"/" + selectData;
+// webLink ="http://localhost:3000/" + selectData;
 
         
         linkTag.setAttribute("href", webLink);
