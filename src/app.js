@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const hbs = require("hbs");
 const bcrypt =require("bcryptjs");
+require('dotenv').config();
 
 // var password = require("passport");
 // var router = express.Router();
