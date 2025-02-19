@@ -1,6 +1,8 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb+srv://register:JglEuJx0C69WQDP1@travl.xgnwl.mongodb.net/<dbname>?retryWrites=true&w=majority",{
+// mongoose.connect("mongodb+srv://register:JglEuJx0C69WQDP1@travl.xgnwl.mongodb.net/<dbname>?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://register:JglEuJx0C69WQDP1@travl.xgnwl.mongodb.net/%3Cdbname%3E?retryWrites=true&w=majority",{
+  
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true
@@ -10,3 +12,5 @@ mongoose.connect("mongodb+srv://register:JglEuJx0C69WQDP1@travl.xgnwl.mongodb.ne
     console.log(`no connection`);
 });
 // require('./db');
+
+// 
