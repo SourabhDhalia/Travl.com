@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.js -e js,hbs",
     "start": "nodemon src/app.js -e js,hbs"
-
   },
   "keywords": [],
   "author": "",
@@ -24,6 +23,7 @@
     "hbs": "^4.1.1",
     "mongoose": "^5.10.15",
     "nodemon": "^2.0.6",
-    "react-google-login": "^5.1.25"
+    "react-google-login": "^5.1.25",
+    "serverless-http": "^3.2.0"
   }
 }
