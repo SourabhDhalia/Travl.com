@@ -18,7 +18,9 @@ change package.json for dev purpose
     "dev": "nodemon src/app.js -e js,hbs",
     "start": "nodemon src/app.js -e js,hbs"
   },
+  # 
 and 
+# 
   in file ./src/db/conn.js 
         ---> replace process.env.MDBKEY with your mongoDB api
         either atlas or mongodb://localhost:27017/
