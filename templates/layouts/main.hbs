@@ -21,15 +21,17 @@
     </div>
   </div>
 
-  {{> nav}}
-  <main>
-    {{{body}}}
-  </main>
-  {{> footer}}
-  {{> aiGuide}}
-  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-    <i class="fa fa-chevron-up"></i>
-  </button>
+  <div class="site-wrapper">
+    {{> nav}}
+    <main>
+      {{{body}}}
+    </main>
+    {{> footer}}
+    {{> aiGuide}}
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <i class="fa fa-chevron-up"></i>
+    </button>
+  </div>
 
   <script>
     window.TRAVL_DESTINATIONS = {{{json destinationsForSearch}}};

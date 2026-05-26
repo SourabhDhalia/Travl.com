@@ -26,6 +26,11 @@ body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+.site-wrapper {
+  width: 100%;
+  position: relative;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -1084,7 +1089,8 @@ textarea {
 }
 
 .map-frame iframe {
-  width: 100%;
+  width: 1px;
+  min-width: 100%;
   height: 100%;
   border: 0;
   display: block;
@@ -1455,7 +1461,7 @@ textarea {
 }
 
 @media (max-width: 980px) {
-  html, body {
+  html, body, .site-wrapper {
     overflow-x: hidden;
   }
 
@@ -1594,7 +1600,16 @@ textarea {
   .feedback-tab {
     top: auto;
     bottom: 14px;
-    right: 76px;
+    left: 14px;
+    right: auto;
+  }
+
+  .feedback-tab details {
+    width: auto;
+  }
+
+  .feedback-tab details[open] {
+    width: min(92vw, 380px);
   }
 
   .feedback-tab summary,
@@ -2775,6 +2790,7 @@ textarea {
   padding: 14px;
   background:
     linear-gradient(135deg, rgba(28, 109, 208, 0.14), rgba(244, 197, 66, 0.16));
+  max-width: 100%;
 }
 
 .location-panel .map-frame {
@@ -3013,6 +3029,42 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+
+  .page-destination .navbar {
+    background: #0f0f0f !important;
+  }
+
+  .content-layout {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .content-stack {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .content-panel,
+  .location-panel,
+  .destination-aside {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .destination-aside .search-box {
+    margin: 20px 16px;
+    max-width: calc(100% - 32px);
+  }
+
+  .gallery-carousel {
+    max-width: 100%;
   }
 }
 
