@@ -1,0 +1,124 @@
+<section class="subhero admin-subhero">
+  <div>
+    <p class="eyebrow">Content Manager</p>
+    <h1>{{#if isNew}}Add New Destination{{else}}Edit {{destination.name}}{{/if}}</h1>
+    <p>Manage structured data entries directly in the MongoDB cluster database.</p>
+  </div>
+</section>
+
+<section class="section admin-section">
+  <div class="section-inner">
+    <div style="margin-bottom: 24px;">
+      <a href="/admin" class="button secondary" style="padding: 10px 18px; display: inline-flex; align-items: center; gap: 8px;">
+        <i class="fa fa-arrow-left"></i> Back to Dashboard
+      </a>
+    </div>
+
+    {{#if errorMessage}}<p class="alert error">{{errorMessage}}</p>{{/if}}
+
+    <div class="admin-panel">
+      <h2>Destination Parameters</h2>
+      <form action="{{#if isNew}}/admin/destinations/new{{else}}/admin/destinations/{{destination._id}}/edit{{/if}}" method="POST" style="display: grid; gap: 20px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" value="{{destination.name}}" required placeholder="e.g. Taj Mahal">
+          </label>
+          <label>
+            <span>Slug</span>
+            <input name="slug" type="text" value="{{destination.slug}}" required placeholder="e.g. taj-mahal">
+          </label>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <label>
+            <span>Region / Location</span>
+            <input name="region" type="text" value="{{destination.region}}" required placeholder="e.g. Agra, Uttar Pradesh">
+          </label>
+          <label>
+            <span>Best Time to Visit</span>
+            <input name="bestTime" type="text" value="{{destination.bestTime}}" placeholder="e.g. October to March">
+          </label>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <label>
+            <span>Hero Image Path</span>
+            <input name="heroImage" type="text" value="{{destination.heroImage}}" required placeholder="e.g. /TAJ/photos/bgg5.jpg.jpeg">
+          </label>
+          <label>
+            <span>Card Image Path</span>
+            <input name="cardImage" type="text" value="{{destination.cardImage}}" placeholder="e.g. /TAJ/photos/b.jpeg">
+          </label>
+        </div>
+
+        <label>
+          <span>Summary Description</span>
+          <textarea name="summary" rows="3" required placeholder="A brief summary overview of the destination.">{{destination.summary}}</textarea>
+        </label>
+
+        <h3 style="margin-top: 10px; border-bottom: 1px solid #eee; padding-bottom: 6px;">Location & Maps</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <label>
+            <span>Location Label</span>
+            <input name="locationLabel" type="text" value="{{destination.location.label}}" placeholder="e.g. Taj Mahal, Agra">
+          </label>
+          <label>
+            <span>Google Maps URL</span>
+            <input name="mapUrl" type="text" value="{{destination.location.mapUrl}}" placeholder="e.g. https://www.google.com/maps/search/?api=1&query=Taj+Mahal+Agra">
+          </label>
+        </div>
+        <label>
+          <span>Google Maps Embed EmbedUrl</span>
+          <input name="embedUrl" type="text" value="{{destination.location.embedUrl}}" placeholder="e.g. https://www.google.com/maps/embed?pb=...">
+        </label>
+
+        <label>
+          <span>Photo Gallery Paths (Comma-separated)</span>
+          <input name="gallery" type="text" value="{{galleryString}}" placeholder="e.g. /TAJ/photos/bgg5.jpg.jpeg, /TAJ/photos/b.jpeg">
+        </label>
+
+        <h3 style="margin-top: 10px; border-bottom: 1px solid #eee; padding-bottom: 6px;">Dynamic Content (JSON Lists)</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-top: -10px;">Input items as a valid JSON array. Each item should have `title`, `body`, and optional `moreUrl` fields.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+          <label>
+            <span>Facts List (JSON Array)</span>
+            <textarea name="facts" rows="6" required style="font-family: monospace; font-size: 0.9rem;">{{factsJson}}</textarea>
+          </label>
+          <label>
+            <span>Foods List (JSON Array)</span>
+            <textarea name="foods" rows="6" required style="font-family: monospace; font-size: 0.9rem;">{{foodsJson}}</textarea>
+          </label>
+          <label>
+            <span>Stories & Myths List (JSON Array)</span>
+            <textarea name="myths" rows="6" required style="font-family: monospace; font-size: 0.9rem;">{{mythsJson}}</textarea>
+          </label>
+        </div>
+
+        <h3 style="margin-top: 10px; border-bottom: 1px solid #eee; padding-bottom: 6px;">Publishing Controls</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: center;">
+          <label>
+            <span>Sorting Order Weight</span>
+            <input name="order" type="number" value="{{destination.order}}" required placeholder="e.g. 1">
+          </label>
+          <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding-top: 24px;">
+            <input name="featured" type="checkbox" {{#if destination.featured}}checked{{/if}} style="width: auto;">
+            <span>Feature on Homepage</span>
+          </label>
+          <label>
+            <span>Status</span>
+            <select name="publishStatus" required>
+              <option value="published" {{#if (eq destination.publishStatus "published")}}selected{{/if}}>Published</option>
+              <option value="draft" {{#if (eq destination.publishStatus "draft")}}selected{{/if}}>Draft (Hidden)</option>
+            </select>
+          </label>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <button class="button primary" type="submit" style="padding: 14px 34px; font-size: 1.05rem;">Save Destination</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

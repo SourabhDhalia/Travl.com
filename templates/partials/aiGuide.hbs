@@ -1,0 +1,22 @@
+<section class="ai-guide" data-ai-guide>
+  <button class="ai-guide-button" type="button" aria-expanded="false" aria-controls="ai-guide-panel">
+    AI Guide
+  </button>
+  <div class="ai-guide-panel" id="ai-guide-panel" hidden>
+    <div class="ai-guide-header">
+      <div>
+        <strong>Travl AI Guide</strong>
+        <span>Ask about the site, destinations, maps, food, or currency.</span>
+      </div>
+      <button type="button" data-ai-close aria-label="Close AI guide">x</button>
+    </div>
+    <div class="ai-guide-messages" data-ai-messages>
+      <p class="ai-message ai-message-bot">Hi, I know the Travl website flow and the destination library. What do you want to explore?</p>
+    </div>
+    <form class="ai-guide-form" data-ai-form>
+      <label class="sr-only" for="ai-guide-input">Ask Travl AI</label>
+      <input id="ai-guide-input" name="message" type="text" placeholder="Ask Travl AI..." autocomplete="off">
+      <button type="submit">Ask</button>
+    </form>
+  </div>
+</section>

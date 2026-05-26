@@ -1,0 +1,63 @@
+<section class="section contact-band" id="contact">
+  <div class="contact-card">
+    <h2 class="title">Contact me</h2>
+    <div class="contact-layout-grid">
+      <div class="column left">
+        <div class="text">Get in Touch</div>
+        <p>A travel guide is "a person with information about a place designed for the use of visitors or tourists".</p>
+        <p>It will usually include information about sights, accommodation, restaurants, transportation, and activities. Maps of varying detail and historical and cultural information are often included.</p>
+
+        <div class="icons">
+          <div class="row">
+            <i class="fa fa-user"></i>
+            <div class="info">
+              <div class="head">Name</div>
+              <div class="sub-title">Sourabh Dhalia</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fa fa-map-marker"></i>
+            <div class="info">
+              <div class="head">Address</div>
+              <div class="sub-title">J.C.Bose UST, YMCA, Faridabad, Haryana.</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fa fa-envelope"></i>
+            <div class="info">
+              <div class="head">Email</div>
+              <div class="sub-title">abc@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column right">
+        <div class="text">Message me</div>
+        {{#if statusMessage}}
+          <p class="status-message">{{statusMessage}}</p>
+        {{/if}}
+        <form class="form-panel" action="/contact" method="POST">
+          <input type="hidden" name="redirect" value="{{currentPath}}">
+          <div class="fields">
+            <div class="field name">
+              <input name="name" type="text" placeholder="Name" required>
+            </div>
+            <div class="field email">
+              <input name="email" type="email" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="field">
+            <input name="subject" type="text" placeholder="Subject" required>
+          </div>
+          <div class="field textarea">
+            <textarea name="message" cols="30" rows="5" placeholder="Message.." required></textarea>
+          </div>
+          <div class="button-row">
+            <button class="button primary" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

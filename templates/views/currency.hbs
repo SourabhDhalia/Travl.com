@@ -1,0 +1,28 @@
+<section class="subhero currency-subhero">
+  <div>
+    <p class="eyebrow">Travel Tool</p>
+    <h1>Currency Converter</h1>
+    <p>Rates are loaded through the Travl backend, keeping provider keys out of browser code.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="currency-tool" data-currency-tool>
+    <div class="currency-header">
+      <h2>Convert To INR And More</h2>
+      <p data-currency-date>Loading rates...</p>
+    </div>
+    <div class="currency-row">
+      <label>
+        <span>Amount</span>
+        <input data-currency-amount type="number" min="0" step="0.01" value="1">
+      </label>
+      <label>
+        <span>From</span>
+        <select data-currency-base></select>
+      </label>
+    </div>
+    <div class="currency-results" data-currency-results></div>
+    <p class="currency-source" data-currency-source></p>
+  </div>
+</section>

@@ -1,0 +1,163 @@
+<section class="hero destination-hero" data-parallax-bg style="--hero-image: url('{{destination.heroImage}}');">
+  <div class="hero-content">
+    <p class="eyebrow">{{destination.region}}</p>
+    <h1>{{destination.name}}</h1>
+    <p>{{destination.summary}}</p>
+    <div class="hero-meta">
+      <span>Best time: {{destination.bestTime}}</span>
+      <a href="{{destination.location.mapUrl}}" target="_blank" rel="noreferrer">Open Map</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#facts" aria-label="Scroll to facts"></a>
+</section>
+
+<section class="section" id="facts">
+  <div class="section-inner content-layout">
+    <aside class="destination-aside">
+      <div class="destination-aside-heading">
+        <p class="eyebrow">Current Guide</p>
+        <h2>{{destination.name}}</h2>
+        <span>{{destination.region}}</span>
+      </div>
+      {{> searchBox id="destination-search"}}
+    </aside>
+
+    <div class="content-stack">
+      <section class="content-panel">
+        <h2>Facts</h2>
+        {{#each destination.facts}}
+          <article>
+            <div class="article-header">
+              <h3>{{title}}</h3>
+              {{#if moreUrl}}
+                <button class="button text-link modal-trigger" data-modal-url="{{moreUrl}}" data-modal-title="{{title}}">Read More</button>
+              {{/if}}
+            </div>
+            <p>{{body}}</p>
+          </article>
+        {{/each}}
+      </section>
+
+      <section class="content-panel" id="food">
+        <h2>Food</h2>
+        {{#each destination.foods}}
+          <article>
+            <div class="article-header">
+              <h3>{{title}}</h3>
+              {{#if moreUrl}}
+                <button class="button text-link modal-trigger" data-modal-url="{{moreUrl}}" data-modal-title="{{title}}">Read More</button>
+              {{/if}}
+            </div>
+            <p>{{body}}</p>
+          </article>
+        {{/each}}
+      </section>
+
+      <section class="content-panel" id="myths">
+        <h2>Stories And Myths</h2>
+        {{#each destination.myths}}
+          <article>
+            <div class="article-header">
+              <h3>{{title}}</h3>
+              {{#if moreUrl}}
+                <button class="button text-link modal-trigger" data-modal-url="{{moreUrl}}" data-modal-title="{{title}}">Read More</button>
+              {{/if}}
+            </div>
+            <p>{{body}}</p>
+          </article>
+        {{/each}}
+      </section>
+
+      <section class="content-panel location-panel" id="map">
+        <div class="location-copy">
+          <p class="eyebrow">Location</p>
+          <h2>{{destination.location.label}}</h2>
+          <a class="button primary" href="{{destination.location.mapUrl}}" target="_blank" rel="noreferrer">Open In Google Maps</a>
+        </div>
+        <div class="location-map-card">
+          <div class="map-frame">
+            <iframe src="{{destination.location.embedUrl}}" title="{{destination.name}} map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-panel" id="gallery" data-gallery-container>
+        <div class="gallery-header-row">
+          <h2>Gallery</h2>
+        </div>
+
+        <div class="gallery-carousel" data-gallery-carousel>
+          <button class="carousel-nav-btn prev" data-carousel-prev aria-label="Previous image">
+            <i class="fa fa-chevron-left"></i>
+          </button>
+          <button class="carousel-nav-btn next" data-carousel-next aria-label="Next image">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+
+          <div class="carousel-slides" data-carousel-slides>
+            {{#each destination.gallery}}
+              <div class="carousel-slide{{#if @first}} active{{/if}}" data-slide-index="{{@index}}" data-image-url="{{this}}">
+                <div class="slide-bg-image" style="background-image: url('{{this}}');" title="Click to view image in fullscreen"></div>
+              </div>
+            {{/each}}
+          </div>
+
+          <div class="carousel-indicators" data-carousel-indicators>
+            {{#each destination.gallery}}
+              <button class="indicator-dot{{#if @first}} active{{/if}}" data-indicator-index="{{@index}}" aria-label="Go to slide {{@index}}"></button>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="gallery-footer-row">
+          <button class="button secondary view-all-btn" data-gallery-view-all>
+            <i class="fa fa-th"></i> View All Images
+          </button>
+        </div>
+      </section>
+
+      <!-- Gallery Lightbox / Grid View Popup Modal -->
+      <div class="gallery-popup-modal" id="gallery-popup" aria-hidden="true">
+        <div class="gallery-popup-overlay" data-popup-close></div>
+        <div class="gallery-popup-container">
+          <div class="gallery-popup-header">
+            <h3>{{destination.name}} Gallery</h3>
+            <button class="gallery-popup-close-btn" data-popup-close aria-label="Close popup">&times;</button>
+          </div>
+
+          <div class="gallery-popup-content">
+            <!-- Grid View (shows all images) -->
+            <div class="gallery-popup-grid" id="popup-grid-view">
+              {{#each destination.gallery}}
+                <div class="popup-grid-item" data-grid-image-index="{{@index}}">
+                  <img src="{{this}}" alt="{{../destination.name}} gallery image">
+                </div>
+              {{/each}}
+            </div>
+
+            <!-- Lightbox Single Image View -->
+            <div class="gallery-popup-lightbox" id="popup-lightbox-view" style="display: none;">
+              <button class="lightbox-nav-btn prev" id="lightbox-prev" aria-label="Previous image">
+                <i class="fa fa-chevron-left"></i>
+              </button>
+              <button class="lightbox-nav-btn next" id="lightbox-next" aria-label="Next image">
+                <i class="fa fa-chevron-right"></i>
+              </button>
+              <div class="lightbox-image-container">
+                <img id="lightbox-active-img" src="" alt="Active gallery image">
+              </div>
+              <div class="lightbox-caption">
+                Image <span id="lightbox-current-idx">1</span> of <span id="lightbox-total-count">{{destination.gallery.length}}</span>
+              </div>
+              <button class="button secondary back-to-grid-btn" id="lightbox-back-to-grid">
+                <i class="fa fa-th"></i> Back to Grid
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> contact}}

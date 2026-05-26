@@ -1,5 +1,13 @@
-# node_modules
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+npm-debug.log*
+coverage/
+.vercel/
 note1.txt
 note 2.txt
 note GT.txt
-.env
+
+node_modules/

@@ -1,0 +1,48 @@
+<section class="subhero admin-subhero">
+  <div>
+    <p class="eyebrow">Operations</p>
+    <h1>Admin Approvals</h1>
+    <p>Review and authorize pending admin access requests. Only approved admins can access database configurations.</p>
+  </div>
+</section>
+
+<section class="section admin-section">
+  <div class="section-inner">
+    <div style="margin-bottom: 24px;">
+      <a href="/admin" class="button secondary" style="padding: 10px 18px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+        <i class="fa fa-arrow-left"></i> Back to Dashboard
+      </a>
+    </div>
+
+    {{#if statusMessage}}<p class="status-message">{{statusMessage}}</p>{{/if}}
+    {{#if errorMessage}}<p class="alert error">{{errorMessage}}</p>{{/if}}
+
+    <div class="admin-panel">
+      <h2>Pending Admin Requests</h2>
+      <div style="display: grid; gap: 16px; margin-top: 20px;">
+        {{#each pendingAdmins}}
+          <div style="border: 1px solid #e5e5e5; border-radius: 8px; padding: 20px; display: flex; justify-content: space-between; align-items: center; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+            <div>
+              <strong style="font-size: 1.15rem; color: #111; display: block;">{{name}}</strong>
+              <span style="color: var(--muted); font-size: 0.95rem; margin-top: 4px; display: block;">{{email}}</span>
+            </div>
+            <div style="display: flex; gap: 12px;">
+              <form action="/admin/approval/{{_id}}/approve" method="POST" style="margin: 0;">
+                <button class="button primary" type="submit" style="font-size: 0.88rem; padding: 8px 20px;">Approve</button>
+              </form>
+              <form action="/admin/approval/{{_id}}/reject" method="POST" onsubmit="return confirm('Reject this admin request? Their account registration will be removed.');" style="margin: 0;">
+                <button class="button text-link" type="submit" style="color: var(--red); font-size: 0.88rem; padding: 8px 14px; text-decoration: none; font-weight: 700;">Reject</button>
+              </form>
+            </div>
+          </div>
+        {{else}}
+          <div style="text-align: center; padding: 48px 24px; color: #666;">
+            <i class="fa fa-check-circle" style="font-size: 3rem; color: #166534; margin-bottom: 12px;"></i>
+            <h3>All Caught Up!</h3>
+            <p>There are no pending admin approval requests at this time.</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

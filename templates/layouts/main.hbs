@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{#if metaDescription}}{{metaDescription}}{{else}}Travl.com helps travellers discover Indian destinations, food, stories, maps, and local context.{{/if}}">
+  <title>{{title}}</title>
+  <link rel="shortcut icon" href="/css%20and%20js/home%20img/13.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body class="{{bodyClass}}">
+  <!-- Page Loading Overlay with Flipping Logo -->
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="page-loader-inner">
+      <img src="/css%20and%20js/home%20img/13.png" alt="" class="loader-logo">
+      <div class="loader-shimmer"></div>
+    </div>
+  </div>
+
+  {{> nav}}
+  <main>
+    {{{body}}}
+  </main>
+  {{> footer}}
+  {{> aiGuide}}
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <script>
+    window.TRAVL_DESTINATIONS = {{{json destinationsForSearch}}};
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+  {{#if currencyPage}}
+    <script src="/assets/js/currency.js" defer></script>
+  {{/if}}
+</body>
+</html>

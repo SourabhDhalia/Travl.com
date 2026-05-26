@@ -1,4 +1,0 @@
-[[redirects]]
-from="/*"
-to = "index.hbs"
-status=200

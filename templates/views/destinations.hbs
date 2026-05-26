@@ -1,0 +1,85 @@
+<section class="subhero">
+  <div>
+    <p class="eyebrow">Explore India</p>
+    <h1>Destination Library</h1>
+    <p>Discover the beauty, local food, and legends of India's most iconic travel locations.</p>
+    {{> searchBox id="library-search"}}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="view-toggle-controls">
+      <button id="toggle-grid-view" class="toggle-btn {{#if (eq destinationView "alt")}}{{else}}active{{/if}}" aria-label="Grid View">
+        <i class="fa fa-th"></i> Grid View
+      </button>
+      <button id="toggle-alt-view" class="toggle-btn {{#if (eq destinationView "alt")}}active{{/if}}" aria-label="Alternating View">
+        <i class="fa fa-list-ul"></i> Alternating View
+      </button>
+    </div>
+
+    <!-- Layout 1: Grid View (Default) -->
+    <div id="grid-layout-container" class="destination-grid library-grid" {{#if (eq destinationView "alt")}}style="display: none;"{{/if}}>
+      {{#each destinations}}
+        <article class="destination-card">
+          <a href="/destinations/{{slug}}">
+            <img src="{{cardImage}}" alt="{{name}}">
+            <div>
+              <p>{{region}}</p>
+              <h3>{{name}}</h3>
+              <span>{{summary}}</span>
+            </div>
+          </a>
+        </article>
+      {{/each}}
+    </div>
+
+    <!-- Layout 2: Alternating View (Hidden by default) -->
+    <div id="alt-layout-container" class="alternating-destinations" {{#if (eq destinationView "alt")}}style="display: grid;"{{else}}style="display: none;"{{/if}}>
+      {{#each destinations}}
+        <a href="/destinations/{{slug}}" class="alt-dest-section">
+          <div class="alt-dest-image-pane" style="background-image: url('{{cardImage}}');"></div>
+          <div class="alt-dest-content-pane">
+            <h3>{{name}}</h3>
+            <p class="alt-dest-text">{{summary}}</p>
+            <div class="alt-dest-action">
+              <span class="fake-link-text">Explore food, cultural history & local activities →</span>
+            </div>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+
+    {{#if pagination.hasPagination}}
+      <nav class="pagination" aria-label="Pagination">
+        {{#if pagination.prevPageUrl}}
+          <a href="{{pagination.prevPageUrl}}" class="page-prev">
+            <i class="fa fa-chevron-left"></i> Prev
+          </a>
+        {{else}}
+          <span class="page-prev page-disabled">
+            <i class="fa fa-chevron-left"></i> Prev
+          </span>
+        {{/if}}
+
+        {{#each pagination.pages}}
+          {{#if this.isCurrent}}
+            <span class="page-current">{{this.number}}</span>
+          {{else}}
+            <a href="{{this.url}}">{{this.number}}</a>
+          {{/if}}
+        {{/each}}
+
+        {{#if pagination.nextPageUrl}}
+          <a href="{{pagination.nextPageUrl}}" class="page-next">
+            Next <i class="fa fa-chevron-right"></i>
+          </a>
+        {{else}}
+          <span class="page-next page-disabled">
+            Next <i class="fa fa-chevron-right"></i>
+          </span>
+        {{/if}}
+      </nav>
+    {{/if}}
+  </div>
+</section>

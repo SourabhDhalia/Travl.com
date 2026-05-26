@@ -1,0 +1,39 @@
+<nav class="navbar" aria-label="Primary navigation">
+  <a class="brand" href="/" aria-label="Travl.com home">
+    <img src="/css%20and%20js/home%20img/logo.png" alt="Travl.com">
+  </a>
+
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-menu" id="primary-menu">
+    {{#if destination}}
+      <a href="/more">Destinations</a>
+      <a href="#facts">Facts</a>
+      <a href="#food">Food</a>
+      <a href="#myths">Stories</a>
+      <a href="#map">Map</a>
+    {{else}}
+      <a href="/">Home</a>
+      <a href="/more">Destinations</a>
+      <a href="/Moneyconvertor">Currency</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    {{/if}}
+    {{#if currentUser}}
+      {{#if (eq currentUser.role "admin")}}
+        <a href="/admin">Admin</a>
+      {{/if}}
+    {{/if}}
+    {{#if currentUser}}
+      <form class="logout-form" action="/logout" method="POST">
+        <button type="submit">Logout</button>
+      </form>
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+  </div>
+</nav>

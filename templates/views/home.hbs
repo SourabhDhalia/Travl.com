@@ -1,0 +1,94 @@
+<section class="hero" id="home" data-parallax-bg style="--hero-image: url('{{home.hero.backgroundImage}}');">
+  <div class="hero-content">
+    <p class="eyebrow">{{home.hero.eyebrow}}</p>
+    <h1>{{home.hero.title}}</h1>
+    <p class="hero-line">You should <span data-rotating-words data-words='{{json home.hero.rotatingWords}}'>explore</span></p>
+    {{> searchBox id="home-search"}}
+  </div>
+  <a class="scroll-cue" href="#why" aria-label="Scroll to why Travl.com"></a>
+</section>
+
+<section class="section intro-band" id="why">
+  <div class="section-inner narrow">
+    <h2>{{home.why.title}}</h2>
+    <p>{{home.why.body}}</p>
+  </div>
+</section>
+
+<section class="section service-band" aria-labelledby="services-title">
+  <div class="section-inner">
+    <h2 id="services-title">Built For Better Travel</h2>
+    <div class="feature-grid">
+      {{#each home.services}}
+        <article class="feature-card">
+          <h3>{{title}}</h3>
+          <p>{{body}}</p>
+        </article>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="section destination-band" aria-labelledby="start-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="start-title">Don't Know Where To Start?</h2>
+      <p>Begin with these traveller favorites, then open the full destination library.</p>
+    </div>
+
+    <div class="alternating-destinations">
+      {{#each featuredDestinations}}
+        <a href="/destinations/{{slug}}" class="alt-dest-section">
+          <div class="alt-dest-image-pane" style="background-image: url('{{cardImage}}');"></div>
+          <div class="alt-dest-content-pane">
+            <h3>{{name}}</h3>
+            <p class="alt-dest-text">{{summary}}</p>
+            <div class="alt-dest-action">
+              <span class="fake-link-text">Explore food, cultural history & local activities →</span>
+            </div>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+
+    <div class="actions">
+      <a class="button primary" href="/more">Read More</a>
+    </div>
+  </div>
+</section>
+
+<section class="section about-band" id="about" data-parallax-bg data-parallax-speed="0.06">
+  <div class="section-inner split">
+    <div class="about-copy">
+      <h2>{{home.about.title}}</h2>
+      <p>{{home.about.body}}</p>
+    </div>
+    <div class="system-note">
+      <h3>Travel With The Story</h3>
+      <p>Open a destination to find the place, the food, the local stories, and the map together. The experience stays playful, but the content now grows from one shared data system.</p>
+    </div>
+  </div>
+</section>
+
+{{> contact}}
+
+<section class="feedback-tab" id="feedback">
+  <details>
+    <summary>Feedback</summary>
+    <form action="/feedback" method="POST">
+      <label>
+        <span>Name</span>
+        <input name="name" type="text" required>
+      </label>
+      <label>
+        <span>Email</span>
+        <input name="email" type="email" required>
+      </label>
+      <label>
+        <span>Comment</span>
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </details>
+</section>

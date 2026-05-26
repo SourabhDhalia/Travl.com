@@ -1,0 +1,66 @@
+<section class="auth-shell">
+  <div class="auth-card auth-card-{{mode}}">
+    <div class="auth-panel">
+      {{#if (eq mode "register")}}
+        <h1>Hello, Friend!</h1>
+        <p>Enter your details and start your journey with Travl.</p>
+        <a class="ghost-button" href="/login">Sign In</a>
+      {{else}}
+        <h1>Welcome Back!</h1>
+        <p>Sign in to keep exploring more destinations.</p>
+        <a class="ghost-button" href="/register">Sign Up</a>
+      {{/if}}
+    </div>
+
+    <div class="auth-form">
+      {{#if (eq mode "register")}}
+        <h2>Create Account</h2>
+        <p>Use your email for registration.</p>
+        {{#if errorMessage}}<div class="alert error">{{errorMessage}}</div>{{/if}}
+        <form action="/register" method="POST">
+          <input type="hidden" name="next" value="{{next}}">
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" value="{{form.name}}" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" value="{{form.email}}" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input name="password" type="password" minlength="8" required>
+          </label>
+          <label>
+            <span>Confirm Password</span>
+            <input name="confirmPassword" type="password" minlength="8" required>
+          </label>
+          <label>
+            <span>Role</span>
+            <select name="role" required>
+              <option value="traveller">Traveller</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">Sign Up</button>
+        </form>
+      {{else}}
+        <h2>Sign In</h2>
+        <p>Use your account to unlock the full guide.</p>
+        {{#if errorMessage}}<div class="alert error">{{errorMessage}}</div>{{/if}}
+        <form action="/login" method="POST">
+          <input type="hidden" name="next" value="{{next}}">
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" value="{{form.email}}" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input name="password" type="password" required>
+          </label>
+          <button class="button primary" type="submit">Sign In</button>
+        </form>
+      {{/if}}
+    </div>
+  </div>
+</section>
