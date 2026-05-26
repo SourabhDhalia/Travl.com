@@ -1455,6 +1455,10 @@ textarea {
 }
 
 @media (max-width: 980px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
   .feature-grid,
   .destination-grid,
   .library-grid,
@@ -1559,6 +1563,14 @@ textarea {
 
   .currency-results {
     grid-template-columns: 1fr;
+  }
+
+  .destination-aside .search-box {
+    grid-template-columns: 1fr;
+  }
+
+  .page-currency .section {
+    margin-top: 0px !important;
   }
 
   .auth-shell {
@@ -2084,6 +2096,9 @@ textarea {
   .contact-layout-grid {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+  .contact-layout-grid .column.right form .fields {
+    grid-template-columns: 1fr;
   }
   .contact-card {
     padding: 32px 20px !important;
