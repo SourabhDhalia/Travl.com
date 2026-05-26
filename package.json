@@ -4,7 +4,7 @@
   "description": "Scalable Express and Handlebars travel guide for Travl.com.",
   "main": "src/server.js",
   "engines": {
-    "node": ">=18"
+    "node": "22.x"
   },
   "scripts": {
     "audit": "npm audit --omit=dev --audit-level=moderate",

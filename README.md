@@ -73,7 +73,11 @@ Optional:
 
 ## Development
 
+Use Node.js 22.x. The repo includes `.nvmrc`, and Vercel reads the same runtime
+from `package.json`.
+
 ```bash
+nvm use
 npm install
 npm run dev
 ```

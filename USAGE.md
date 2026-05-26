@@ -5,6 +5,12 @@ UI, and reliability refactor.
 
 ## Local Setup
 
+Use Node.js 22.x:
+
+```bash
+nvm use
+```
+
 Install dependencies and start the development server:
 
 ```bash
